@@ -1,31 +1,152 @@
-div[class^="category-title-header"] {
-  padding-top: 60px;
-  display: flex;
-  text-align: center;
-  width: 100%;
-  justify-content: center;
-  .category-title-contents {
-    max-width: 500px;
-    padding: 40px;
-    svg {
-      height: 1.5em;
-      width: 1.1em;
-      margin-right: 0.25em;
-    }
-    h1 {
-      display: inline;
-    }
-  }
-  .category-title-description {
-    a,
-    a:visited {
-      color: inherit;
-      text-decoration: underline;
-    }
-  }
-}
 .category-header {
   #main-outlet {
     padding-top: 20px;
   }
+}
+
+div[class^="category-title-header"] {
+  padding-top: 45px; // height of Discourse nav bar, see main CSS
+  display: flex;
+  text-align: left;
+  width: 100%;
+  justify-content: center;
+  background-color: #C8CCD1;
+  background-size: cover;
+  background-position: center left;
+  .wrap {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    width: inherit; // site width
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+      .category-title-contents {
+        padding: 1em 1.5em;
+        color: #222;
+        background-color: rgba(255, 255, 255, 0.87);
+        svg {
+          height: 1.5em;
+          width: 1.1em;
+          margin-right: 0.25em;
+        }
+        h1 {
+          display: inline;
+        }
+      }
+      .category-title-description {
+        .cooked {
+            margin: 0 0 0.3em 0;
+        }
+        strong {
+            font-weight: normal;    
+        }
+        a,
+        a:visited {
+          color: inherit;
+          text-decoration: underline;
+        }
+      }
+      .category-image-attribution {
+          display: none;
+          color: #555;
+          margin-top: 0.2em;
+          font-size: 0.8em;
+          &:after {
+            content: "";
+            position: relative;
+            top: -0.2em;
+          }
+      }
+  }
+}
+
+@media screen and (min-width: 48em) {
+    div[class^="category-title-header"] .wrap {
+        min-height: 18em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        .category-title-contents {
+            position: absolute;
+            bottom: 1em;
+        }
+        .category-title-description {
+            max-width: 300px; // limit width
+            max-height: 14em;
+            overflow: hidden;
+        }
+    }
+}
+
+
+// hard code banner background images
+// Commons link seem to load faster than the url from category.uploaded_background.url
+// image size: 600px - 1000px - 1600px
+// default image (earth from moon)
+div[class^="category-title-header"] {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/AS8-13-2329.jpg/600px-AS8-13-2329.jpg);}
+div.category-banner-ask-anything {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg/600px-Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg);}
+div.category-banner-events {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg/600px-Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg);}
+div.category-banner-regions {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Top_view_of_a_compass_on_a_map_%28Unsplash%29.jpg/600px-Top_view_of_a_compass_on_a_map_%28Unsplash%29.jpg);}
+div.category-banner-wikimedia-2030 {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/World_heat_map.png/600px-World_heat_map.png);}
+div.category-banner-projects {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Lights_on_the_roof_%28Unsplash%29.jpg/600px-Lights_on_the_roof_%28Unsplash%29.jpg);}
+div.category-banner-campaigns {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ferrocarril_en_el_salar_de_Ascot%C3%A1n%2C_Chile%2C_2016-02-09%2C_DD_46.JPG/600px-Ferrocarril_en_el_salar_de_Ascot%C3%A1n%2C_Chile%2C_2016-02-09%2C_DD_46.JPG);}
+div.category-banner-growth {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/High_Trestle_Trail_Bridge%2C_Madrid%2C_Iowa%2C_United_States_%28Unsplash_F9o7u-CnDJk%29_CropNR.jpg/600px-High_Trestle_Trail_Bridge%2C_Madrid%2C_Iowa%2C_United_States_%28Unsplash_F9o7u-CnDJk%29_CropNR.jpg);}
+div.category-banner-space-station {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/ISS-45_Atlantic_Ocean_seen_from_the_Cupola.jpg/600px-ISS-45_Atlantic_Ocean_seen_from_the_Cupola.jpg);}
+div.category-banner-education {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Wikimedia_Sverige%2C_workshop_p%C3%A5_Stockholms_universitet_2_beskuren.JPG/600px-Wikimedia_Sverige%2C_workshop_p%C3%A5_Stockholms_universitet_2_beskuren.JPG);}
+div.category-banner-other {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Urban_Shifting_%28Unsplash%29.jpg/600px-Urban_Shifting_%28Unsplash%29.jpg);}
+div.category-banner-translation {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Open_book_in_sun_%28Unsplash%29.jpg/600px-Open_book_in_sun_%28Unsplash%29.jpg);}
+div.category-banner-technical {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Looking_up_%28Unsplash%29.jpg/600px-Looking_up_%28Unsplash%29.jpg);}
+div.category-banner-research {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/LOOK_%28Unsplash%29.jpg/600px-LOOK_%28Unsplash%29.jpg);}
+div.category-banner-gender-gap {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Sea_wave_abstract_texture_%28Unsplash%29.jpg/600px-Sea_wave_abstract_texture_%28Unsplash%29.jpg);}
+div.category-banner-brand {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Submerged_wood_texture_%28Unsplash%29.jpg/600px-Submerged_wood_texture_%28Unsplash%29.jpg);}
+div.category-banner-brand-network {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Submerged_wood_texture_%28Unsplash%29.jpg/600px-Submerged_wood_texture_%28Unsplash%29.jpg);}
+div.category-banner-about-wikimedia-space {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg/600px-An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg);}
+
+
+@media screen and (min-width: 800px) and (max-width: 1399) {
+div[class^="category-title-header"] {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/AS8-13-2329.jpg/1000px-AS8-13-2329.jpg);}
+div.category-banner-ask-anything {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg/1000px-Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg);}
+div.category-banner-events {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg/1000px-Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg);}
+div.category-banner-regions {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Top_view_of_a_compass_on_a_map_%28Unsplash%29.jpg/1000px-Top_view_of_a_compass_on_a_map_%28Unsplash%29.jpg);}
+div.category-banner-wikimedia-2030 {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/World_heat_map.png/1000px-World_heat_map.png);}
+div.category-banner-projects {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Lights_on_the_roof_%28Unsplash%29.jpg/1000px-Lights_on_the_roof_%28Unsplash%29.jpg);}
+div.category-banner-campaigns {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ferrocarril_en_el_salar_de_Ascot%C3%A1n%2C_Chile%2C_2016-02-09%2C_DD_46.JPG/1000px-Ferrocarril_en_el_salar_de_Ascot%C3%A1n%2C_Chile%2C_2016-02-09%2C_DD_46.JPG);}
+div.category-banner-growth {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/High_Trestle_Trail_Bridge%2C_Madrid%2C_Iowa%2C_United_States_%28Unsplash_F9o7u-CnDJk%29_CropNR.jpg/1000px-High_Trestle_Trail_Bridge%2C_Madrid%2C_Iowa%2C_United_States_%28Unsplash_F9o7u-CnDJk%29_CropNR.jpg);}
+div.category-banner-space-station {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/ISS-45_Atlantic_Ocean_seen_from_the_Cupola.jpg/1000px-ISS-45_Atlantic_Ocean_seen_from_the_Cupola.jpg);}
+div.category-banner-education {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Wikimedia_Sverige%2C_workshop_p%C3%A5_Stockholms_universitet_2_beskuren.JPG/1000px-Wikimedia_Sverige%2C_workshop_p%C3%A5_Stockholms_universitet_2_beskuren.JPG);}
+div.category-banner-other {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Urban_Shifting_%28Unsplash%29.jpg/1000px-Urban_Shifting_%28Unsplash%29.jpg);}
+div.category-banner-translation {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Open_book_in_sun_%28Unsplash%29.jpg/1000px-Open_book_in_sun_%28Unsplash%29.jpg);}
+div.category-banner-technical {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Looking_up_%28Unsplash%29.jpg/1000px-Looking_up_%28Unsplash%29.jpg);}
+div.category-banner-research {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/LOOK_%28Unsplash%29.jpg/1000px-LOOK_%28Unsplash%29.jpg);}
+div.category-banner-gender-gap {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Sea_wave_abstract_texture_%28Unsplash%29.jpg/1000px-Sea_wave_abstract_texture_%28Unsplash%29.jpg);}
+div.category-banner-brand {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Submerged_wood_texture_%28Unsplash%29.jpg/1000px-Submerged_wood_texture_%28Unsplash%29.jpg);}
+div.category-banner-brand-network {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Submerged_wood_texture_%28Unsplash%29.jpg/1000px-Submerged_wood_texture_%28Unsplash%29.jpg);}
+div.category-banner-about-wikimedia-space {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg/1000px-An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg);}
+}
+
+@media screen and (min-width: 1400px) {
+div[class^="category-title-header"] {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/AS8-13-2329.jpg/1600px-AS8-13-2329.jpg);}
+div.category-banner-ask-anything {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg/1600px-Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg);}  
+div.category-banner-events {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg/1600px-Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg);}
+div.category-banner-regions {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Top_view_of_a_compass_on_a_map_%28Unsplash%29.jpg/1600px-Top_view_of_a_compass_on_a_map_%28Unsplash%29.jpg);}
+div.category-banner-wikimedia-2030 {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/World_heat_map.png/1600px-World_heat_map.png);}
+div.category-banner-projects {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Lights_on_the_roof_%28Unsplash%29.jpg/1600px-Lights_on_the_roof_%28Unsplash%29.jpg);}
+div.category-banner-campaigns {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ferrocarril_en_el_salar_de_Ascot%C3%A1n%2C_Chile%2C_2016-02-09%2C_DD_46.JPG/1600px-Ferrocarril_en_el_salar_de_Ascot%C3%A1n%2C_Chile%2C_2016-02-09%2C_DD_46.JPG);}
+div.category-banner-growth {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/High_Trestle_Trail_Bridge%2C_Madrid%2C_Iowa%2C_United_States_%28Unsplash_F9o7u-CnDJk%29_CropNR.jpg/1600px-High_Trestle_Trail_Bridge%2C_Madrid%2C_Iowa%2C_United_States_%28Unsplash_F9o7u-CnDJk%29_CropNR.jpg);}
+div.category-banner-space-station {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/ISS-45_Atlantic_Ocean_seen_from_the_Cupola.jpg/1600px-ISS-45_Atlantic_Ocean_seen_from_the_Cupola.jpg);}
+div.category-banner-education {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Wikimedia_Sverige%2C_workshop_p%C3%A5_Stockholms_universitet_2_beskuren.JPG/1600px-Wikimedia_Sverige%2C_workshop_p%C3%A5_Stockholms_universitet_2_beskuren.JPG);}
+div.category-banner-other {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Urban_Shifting_%28Unsplash%29.jpg/1600px-Urban_Shifting_%28Unsplash%29.jpg);}
+div.category-banner-translation {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Open_book_in_sun_%28Unsplash%29.jpg/1600px-Open_book_in_sun_%28Unsplash%29.jpg);}
+div.category-banner-technical {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Looking_up_%28Unsplash%29.jpg/1600px-Looking_up_%28Unsplash%29.jpg);}
+div.category-banner-research {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/LOOK_%28Unsplash%29.jpg/1600px-LOOK_%28Unsplash%29.jpg);}
+div.category-banner-gender-gap {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Sea_wave_abstract_texture_%28Unsplash%29.jpg/1600px-Sea_wave_abstract_texture_%28Unsplash%29.jpg);}
+div.category-banner-brand {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Submerged_wood_texture_%28Unsplash%29.jpg/1600px-Submerged_wood_texture_%28Unsplash%29.jpg);}
+div.category-banner-brand-network {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Submerged_wood_texture_%28Unsplash%29.jpg/1600px-Submerged_wood_texture_%28Unsplash%29.jpg);}
+div.category-banner-about-wikimedia-space {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg/1600px-An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg);}
+}
+
+div.category-banner-education .wrap .category-image-attribution {
+    display: block;
+    &:after {
+        content: "Axel Pettersson, CC BY-SA 3.0";
+    }
 }
