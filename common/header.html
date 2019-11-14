@@ -3,6 +3,7 @@
   const { h } = require('virtual-dom');
   const { iconNode } = require("discourse-common/lib/icon-library");
   let lockIcon = iconNode('lock');
+  let attributionIcon = iconNode('image');
 
   api.createWidget('category-header-widget', {
       tagName: 'span',
@@ -26,7 +27,7 @@
                   $("body").addClass("category-header");
 
                   function catDesc() {
-                      if(settings.show_description) {
+                      if(settings.show_description && category.description_text) {
                           return h('div.cooked', {innerHTML: category.description});
                       }
                   }
@@ -38,15 +39,18 @@
                   }
 
                   return h('div.category-title-header' + " .category-banner-" + category.slug, {
-                      "attributes" : {
-                          "style" : "background-color: #" + category.color + "; color: #" + category.text_color + ";"
+                      "attributes" : { 
+                          "style" : ""
                       }
-                  }, h('div.category-title-contents', [
-                  ifProtected(),
-                  h('h1', category.name),
-                  h('div.category-title-description',catDesc())
-                  ]),
-
+                  },
+                      h('div.wrap', // restructure of contents
+                        [h('div.category-title-contents', [
+                            ifProtected(),
+                            h('h1', category.name),
+                            h('div.category-title-description', catDesc()),
+                            h('div.category-image-attribution.tooltip', attributionIcon)
+                          ])
+                        ])
                   );
               }
           } else {
