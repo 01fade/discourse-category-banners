@@ -1,3 +1,5 @@
+<!--Before updating this component: note the changes below and port to new version-->
+
 <script type="text/discourse-plugin" version="0.8">
   const container = Discourse.__container__;
   const { h } = require('virtual-dom');
@@ -18,12 +20,15 @@
           const isException = category &&
           settings.exceptions.split("|").includes(category.name);
 
+          const blacklist = ["/c/events/l/map", "/c/events/l/calendar"];
+          const isAnotherException = (blacklist.indexOf(path) > -1) ? true : isAnotherException;
+
           if(/^\/c\//.test(path)) {
               const hideMobile = (!settings.show_mobile && this.site.mobileView) ? "true" : hideMobile;
               const subCat = (!settings.show_subcategory && category.parentCategory) ? "true" : subCat;
               const noDesc = (settings.hide_if_no_description && !category.description_text) ? "true" : noDesc;
 
-              if(!isException && !noDesc && !subCat && !hideMobile) {
+              if(!isException && !noDesc && !subCat && !hideMobile && !isAnotherException) {
                   $("body").addClass("category-header");
 
                   function catDesc() {
