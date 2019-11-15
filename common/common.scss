@@ -105,7 +105,7 @@ div.category-banner-brand-network {background-image: url(https://upload.wikimedi
 div.category-banner-about-wikimedia-space {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg/600px-An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg);}
 
 
-@media screen and (min-width: @pem(768)) {
+@media screen and (min-width: pem(768)) {
 div[class^="category-title-header"] {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/AS8-13-2329.jpg/900px-AS8-13-2329.jpg);}
 div.category-banner-ask-anything {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg/900px-Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg);}
 div.category-banner-events {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg/900px-Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg);}
@@ -126,7 +126,7 @@ div.category-banner-brand-network {background-image: url(https://upload.wikimedi
 div.category-banner-about-wikimedia-space {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg/900px-An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg);}
 }
 
-@media screen and (min-width: @pem(992)) {
+@media screen and (min-width: pem(992)) {
 div[class^="category-title-header"] {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/AS8-13-2329.jpg/1200px-AS8-13-2329.jpg);}
 div.category-banner-ask-anything {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg/1200px-Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg);}  
 div.category-banner-events {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg/1200px-Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg);}
@@ -147,7 +147,7 @@ div.category-banner-brand-network {background-image: url(https://upload.wikimedi
 div.category-banner-about-wikimedia-space {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg/1200px-An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg);}
 }
 
-@media screen and (min-width: @pem(1200)) {
+@media screen and (min-width: pem(1200)) {
 div[class^="category-title-header"] {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/AS8-13-2329.jpg/1600px-AS8-13-2329.jpg);}
 div.category-banner-ask-anything {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg/1600px-Boston_Public_Library%2C_Boston%2C_United_States_%28Unsplash%29.jpg);}  
 div.category-banner-events {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg/1600px-Framed_Arch_and_Stairs_at_AGO_in_Toronto_%28Unsplash%29.jpg);}
