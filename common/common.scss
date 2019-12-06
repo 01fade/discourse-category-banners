@@ -168,10 +168,10 @@ div.category-banner-brand-network {background-image: url(https://upload.wikimedi
 div.category-banner-about-wikimedia-space {background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg/1600px-An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg);}
 }
 
-div[class^="category-title-header"] .wrap .category-image-attribution {
-    display: block;
+div.category-banner-education .wrap .category-image-attribution,
+div.category-banner-brand-network .wrap .category-image-attribution {
+    display: block; /*don't hide anymore*/
 }
-
 div.category-banner-education .wrap .category-image-attribution:after {
     content: "Axel Pettersson, CC BY-SA 3.0";
 }
