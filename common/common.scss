@@ -176,7 +176,8 @@ div.category-banner-huwiki {background-image: url(https://upload.wikimedia.org/w
 }
 
 div.category-banner-education .wrap .category-image-attribution,
-div.category-banner-brand-network .wrap .category-image-attribution {
+div.category-banner-brand-network .wrap .category-image-attribution,
+div.category-banner-huwiki .wrap .category-image-attribution {
     display: block; /*don't hide anymore*/
 }
 div.category-banner-education .wrap .category-image-attribution:after {
@@ -186,6 +187,11 @@ div.category-banner-education .wrap .category-image-attribution:after {
 div.category-banner-brand-network .wrap .category-image-attribution:after {
     content: "VGrigas (WMF), CC BY-SA 3.0";
 }
+
+div.div.category-banner-huwiki .wrap .category-image-attribution:after {
+    content: "Christian Mehlführer, CC BY 3.0";
+}
+
 
 // tests
 
